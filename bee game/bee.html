@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        div{
+            float: left;
+        }
+        .r1{
+            width: 100%;
+            background-image: url('image/forest.png');
+            background-size: cover;
+            height: 700px;
+
+        }
+        .c1{
+            width: 25%;
+            text-align: right;
+        }
+        .c2{
+            width: 25%;
+            color: white;
+
+        } 
+        
+        .c3{
+            width: 25%;
+            text-align: right;
+            padding-left: 200px;   
+            color: white;
+        }
+         .c4{
+            width: 25%;
+            color: white;
+
+        }
+        .img1{
+            height: 90px;
+            position: absolute;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="r1">
+        
+
+        <div class="c1">
+        <h1 style="color: white;">Score:</h1>
+        </div>
+        <div class="c2">
+            <h1 id="p1">0</h1>
+        </div>
+        <div class="c3">
+            <h1>time left:</h1>
+        </div>
+        <div class="c4">
+            <h1 onclick="fun1()" id="p2">60</h1>
+        </div>
+      </div>
+      <div class="r2">
+        <img onclick="fun2()" class="img1" src="image/bee-removebg-preview.png" alt="" id="bee">
+      </div>
+</body>
+<script>
+    var a=60;
+    function fun1(){
+        a--;
+        document.getElementById("p2").innerHTML=a;
+        if(a==0){
+            alert("your score is"+b);
+            clearInterval(p);
+            clearInterval(s);
+        }
+    }
+    var p= setInterval("fun1()",1000)
+    var b=0;
+    function fun2(){
+        b++;
+        document.getElementById("p1").innerHTML=b;
+    }
+        function moveimg(){
+        var m1= parseInt(Math.random()*1000);
+        var m2= parseInt(Math.random()*600);
+        document.getElementById("bee").style.left=m1+"px";
+        document.getElementById("bee").style.top=m2+"px";
+    }
+    var s= setInterval("moveimg()",1500);
+</script>
+</html>
